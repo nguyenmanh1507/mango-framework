@@ -1,6 +1,7 @@
 <?php
 /**
- * content-none.php
+ * content-gallery.php
+ *
  * The default template for displaying post with the Gallery post format.
  */
 ?>
