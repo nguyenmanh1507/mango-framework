@@ -86,8 +86,8 @@ if ( !function_exists( 'mango_setup' ) ) {
  */
  if ( !function_exists( 'mango_post_meta' ) ) {
    function mango_post_meta() {
-     echo '<ul class="list-inline entry-meta">';
-     if ( get_post_type() === 'post' ) {
+    echo '<ul class="list-inline entry-meta">';
+    if ( get_post_type() === 'post' ) {
       // If the post is sticky, mark it.
       if ( is_sticky() ) {
         echo '<li class="meta-featured_post"><i class="fa fa-thumb-tack"></i>' . __( 'Sticky', TEXTDOMAIN ) . '</li>';
@@ -138,6 +138,7 @@ if ( !function_exists( 'mango_setup' ) ) {
         );
         echo '</li>';
       }
-     }
+    }
+    echo '</ul>';
    }
  }
