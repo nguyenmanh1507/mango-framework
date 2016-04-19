@@ -1,6 +1,8 @@
 <?php
 /**
  * content-none.php
+ *
+ * Template for display content none.
  */
 ?>
 <div class="not-found">
