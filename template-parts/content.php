@@ -30,4 +30,25 @@
       ?>
     </div>
   </header>
+
+  <div class="entry-content">
+    <?php
+    if ( is_search() ) {
+      the_excerpt();
+    } else {
+      the_content( __( 'Continue reading &rarr;', TEXTDOMAIN ) );
+      wp_link_pages();
+    }
+    ?>
+  </div>
+
+  <footer class="entry-footer">
+    <?php
+    // If we have a single page and the author bio exists,
+    // display it
+    if ( is_single() && get_the_author_meta( 'description' ) ) {
+      echo '<h2>' . __( 'Written by', TEXTDOMAIN ) . the_author() . '</h2>';
+    }
+    ?>
+  </footer>
 </article>
