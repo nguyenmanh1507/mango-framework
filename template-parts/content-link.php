@@ -15,7 +15,7 @@
 
   <footer class="entry-footer">
     <div class="entry-meta">
-      <?php alpha_post_meta(); ?>
+      <?php mango_post_meta(); ?>
     </div>
     <?php
     // If we have a single page and the author bio exists,
