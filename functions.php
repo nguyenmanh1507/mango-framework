@@ -92,6 +92,13 @@ if ( !function_exists( 'mango_setup' ) ) {
       if ( is_sticky() ) {
         echo '<li class="meta-featured_post"><i class="fa fa-thumb-tack"></i>' . __( 'Sticky', TEXTDOMAIN ) . '</li>';
       }
+
+      // Get the post author.
+      printf(
+        '<li class="meta-author"><a href="%1$s" rel="author">%2$s</a></li>',
+        esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
+        get_the_author()
+      );
      }
    }
  }
