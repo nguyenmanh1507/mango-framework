@@ -142,3 +142,28 @@ if ( !function_exists( 'mango_setup' ) ) {
     echo '</ul>';
    }
  }
+
+ /**
+  * -----------------------------------------------------------------------------
+  * 6.0 - Display navigation to the next/previous set of posts.
+  * -----------------------------------------------------------------------------
+  */
+  if ( !function_exists( 'mango_paging_nav' ) ) {
+    function mango_paging_nav() {
+      echo '<ul>';
+      if ( get_previous_posts_link() ) {
+        printf(
+          '<li class="next">%1$s</li>',
+          previous_posts_link( __( 'Newer Posts &rarr;', TEXTDOMAIN ) )
+        );
+      }
+
+      if ( get_next_posts_link() ) {
+        printf(
+          '<li class="previous">%1$s</li>',
+          next_posts_link( __( '&larr; Older Posts', TEXTDOMAIN ) )
+        );
+      }
+      echo '</ul>';
+    }
+  }
