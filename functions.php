@@ -99,6 +99,9 @@ if ( !function_exists( 'mango_setup' ) ) {
         esc_url( get_author_posts_url( get_the_author_meta( 'ID' ) ) ),
         get_the_author()
       );
+
+      // Get the date.
+      echo '<li class="meta-date">' . get_the_date() . '</li>';
      }
    }
  }
