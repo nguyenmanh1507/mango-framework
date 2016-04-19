@@ -47,7 +47,8 @@
     // If we have a single page and the author bio exists,
     // display it
     if ( is_single() && get_the_author_meta( 'description' ) ) {
-      echo '<h2>' . __( 'Written by', TEXTDOMAIN ) . the_author() . '</h2>';
+      echo '<h2>' . __( 'Written by', TEXTDOMAIN ) . get_the_author() . '</h2>';
+      echo '<p>' . get_the_author_meta( 'description' ) . '</p>';
     }
     ?>
   </footer>
