@@ -102,6 +102,42 @@ if ( !function_exists( 'mango_setup' ) ) {
 
       // Get the date.
       echo '<li class="meta-date">' . get_the_date() . '</li>';
+
+      // The categories.
+      $category_list = get_the_category_list( ', ' );
+      if ( $category_list ) {
+        echo '<li class="meta-categories">' . $category_list . '</li>';
+      }
+
+      // The tags.
+      $tag_list = get_the_tag_list( '', ', ' );
+      if ( $tag_list ) {
+        echo '<li class="meta-tags">' . $tag_list . '</li>';
+      }
+
+      // Comment link.
+      if ( comments_open() ) {
+        echo '<li>';
+        echo '<span>';
+        comments_popup_link(
+          __( 'Leave a comment', TEXTDOMAIN ),
+          __( 'One comment so far', TEXTDOMAIN ),
+          __( 'View all % comments', TEXTDOMAIN )
+        );
+        echo '</span>';
+        echo '</li>';
+      }
+
+      // Edit link.
+      if ( is_user_logged_in() ) {
+        echo '<li>';
+        edit_post_link(
+          __( 'Edit', TEXTDOMAIN ),
+          '<span class="meta-edit">',
+          '</span>'
+        );
+        echo '</li>';
+      }
      }
    }
  }
